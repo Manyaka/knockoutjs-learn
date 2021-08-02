@@ -6,7 +6,7 @@ function SeatReservation(name, initialMeal) {
 
   self.formattedPrice = ko.computed(function () {
     let price = self.meal().price;
-    return price ?  price.toFixed(2) + "₽" : "Бесплатно";
+    return price ? price.toFixed(2) + "₽" : "Бесплатно";
   });
 }
 
@@ -30,6 +30,9 @@ function ReservationsViewModel() {
   // Operations
   self.addSeat = function () {
     self.seats.push(new SeatReservation("", self.availableMeals[0]));
+  }
+  self.removeSeat = function (seat) {
+    self.seats.remove(seat);
   }
 }
 

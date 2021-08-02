@@ -58,6 +58,7 @@
                 data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
       </td>
       <td data-bind="text: formattedPrice"></td>
+      <td><button data-bind="click: $root.removeSeat" type="button">Удалить</button></td>
     </tr>
     </tbody>
   </table>
