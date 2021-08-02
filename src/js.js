@@ -6,6 +6,11 @@ function AppViewModel() {
   this.fullName = ko.computed(function () {
     return this.lastName() + " " + this.firstName();
   }, this);
+
+  this.capitalizeLastName = function () {
+    let currentVal = this.lastName();        // Read the current value
+    this.lastName(currentVal.toUpperCase()); // Write back a modified value
+  };
 }
 
 // Activates knockout.js
