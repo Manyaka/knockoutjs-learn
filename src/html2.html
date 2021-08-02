@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Knockout.js</title>
+  <title>Второй пример</title>
   <script src="../lib/knockout-3.5.1.js"></script>
   <style>
     table {
@@ -18,24 +18,6 @@
 </head>
 
 <body>
-  <!--<div>
-    <p>Имя: <strong data-bind="text: firstName"></strong></p>
-    <p>Фамилия: <strong data-bind="text: lastName"></strong></p>
-    <p>
-      <label for="firstName">Имя:</label>
-      <input data-bind="value: firstName" id="firstName">
-    </p>
-    <p>
-      <label for="lastName">Фамилия:</label>
-      <input data-bind="value: lastName" id="lastName">
-    </p>
-
-    <p>ФИО: <strong data-bind="text: fullName"></strong></p>
-
-    <button data-bind="click: capitalizeLastName" type="button">Фамилия прописными</button>
-  </div>-->
-
-  <hr>
   <h2>Резерв мест (<span data-bind="text: seats().length"></span>)</h2>
   <table>
     <thead>
@@ -72,6 +54,6 @@
     Общая сумма: <span data-bind="text: totalSurcharge().toFixed(2)"></span>₽
   </h3>
 
-  <script type="module" src="js.mjs"></script>
+  <script src="./js/js2.js"></script>
 </body>
 </html>
