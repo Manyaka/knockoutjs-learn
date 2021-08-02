@@ -7,26 +7,32 @@
   <script src="../lib/knockout-3.5.1.js"></script>
   <style>
     table {
+      border: 1px double black;
+    }
+    table td {
+      padding: 1em;
       border: 1px solid black;
     }
   </style>
 </head>
 
 <body>
-  <p>Имя: <strong data-bind="text: firstName"></strong></p>
-  <p>Фамилия: <strong data-bind="text: lastName"></strong></p>
-  <p>
-    <label for="firstName">Имя:</label>
-    <input data-bind="value: firstName" id="firstName">
-  </p>
-  <p>
-    <label for="lastName">Фамилия:</label>
-    <input data-bind="value: lastName" id="lastName">
-  </p>
+  <!--<div>
+    <p>Имя: <strong data-bind="text: firstName"></strong></p>
+    <p>Фамилия: <strong data-bind="text: lastName"></strong></p>
+    <p>
+      <label for="firstName">Имя:</label>
+      <input data-bind="value: firstName" id="firstName">
+    </p>
+    <p>
+      <label for="lastName">Фамилия:</label>
+      <input data-bind="value: lastName" id="lastName">
+    </p>
 
-  <p>ФИО: <strong data-bind="text: fullName"></strong></p>
+    <p>ФИО: <strong data-bind="text: fullName"></strong></p>
 
-  <button data-bind="click: capitalizeLastName" type="button">Фамилия прописными</button>
+    <button data-bind="click: capitalizeLastName" type="button">Фамилия прописными</button>
+  </div>-->
 
   <hr>
   <h2>Резерв мест</h2>
@@ -39,7 +45,13 @@
       <th></th>
     </tr>
     </thead>
-    <tbody></tbody>
+    <tbody data-bind="foreach: seats">
+    <tr>
+      <td data-bind="text: name"></td>
+      <td data-bind="text: meal().mealName"></td>
+      <td data-bind="text: meal().price"></td>
+    </tr>
+    </tbody>
   </table>
 
   <script type="module" src="js.mjs"></script>
