@@ -8,6 +8,24 @@
 </head>
 
 <body>
+  <h3>Задачи</h3>
+
+  <form data-bind="submit: addTask">
+    <label for="add-task">Добавить задачу:</label>
+    <input data-bind="value: newTaskText" placeholder="Что нужно сделать?" id="add-task">
+    <button type="submit">Добавить</button>
+  </form>
+
+  <ul data-bind="foreach: tasks, visible: tasks().length > 0">
+    <li>
+      <input type="checkbox" data-bind="checked: isDone">
+      <input data-bind="value: title, disable: isDone">
+      <button data-bind="click: $parent.removeTask" type="button">Удалить</button>
+    </li>
+  </ul>
+
+  <p>Недоделаных задач: <b data-bind="text: incompleteTasks().length">&nbsp;</b></p>
+  <span data-bind="visible: incompleteTasks().length == 0">Время отдохнуть!</span>
 
   <script src="./js/js3.js"></script>
 </body>
