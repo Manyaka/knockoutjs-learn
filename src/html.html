@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,17 @@
 </head>
 
 <body>
+  <p>Имя: <strong data-bind="text: firstName"></strong></p>
+  <p>Фамилия: <strong data-bind="text: lastName"></strong></p>
+  <p>
+    <label for="firstName">Имя:</label>
+    <input data-bind="value: firstName" id="firstName">
+  </p>
+  <p>
+    <label for="lastName">Фамилия:</label>
+    <input data-bind="value: lastName" id="lastName">
+  </p>
 
+  <script src="js.js"></script>
 </body>
 </html>
