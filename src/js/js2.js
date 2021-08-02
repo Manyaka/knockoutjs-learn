@@ -18,9 +18,14 @@ function ReservationsViewModel() {
 
   // Editable data
   self.seats = ko.observableArray([
-    new SeatReservation("Маша", self.availableMeals[0]),
-    new SeatReservation("Таня", self.availableMeals[0])
+    new SeatReservation("Маша", self.availableMeals[1]),
+    new SeatReservation("Таня", self.availableMeals[2])
   ]);
+
+  // Operations
+  self.addSeat = function() {
+    self.seats.push(new SeatReservation("", self.availableMeals[0]));
+  }
 }
 
 ko.applyBindings(new ReservationsViewModel());
