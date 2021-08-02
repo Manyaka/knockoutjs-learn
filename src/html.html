@@ -64,6 +64,11 @@
   </table>
   <br>
   <button data-bind="click: addSeat" type="button">Добавить место</button>
+  <br>
+
+  <h3 data-bind="visible: totalSurcharge() > 0">
+    Общая сумма: <span data-bind="text: totalSurcharge().toFixed(2)"></span>₽
+  </h3>
 
   <script type="module" src="js.mjs"></script>
 </body>

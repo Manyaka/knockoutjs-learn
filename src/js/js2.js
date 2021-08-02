@@ -27,6 +27,16 @@ function ReservationsViewModel() {
     new SeatReservation("Таня", self.availableMeals[2])
   ]);
 
+  self.totalSurcharge = ko.computed(function () {
+    let total = 0;
+
+    for (let i = 0; i < self.seats().length; i++) {
+      total += self.seats()[i].meal().price;
+    }
+
+    return total;
+  });
+
   // Operations
   self.addSeat = function () {
     self.seats.push(new SeatReservation("", self.availableMeals[0]));
