@@ -1,6 +1,6 @@
 function Task(data) {
   this.title = ko.observable(data.title);
-  this.isDone = ko.observable(data.isDone);
+  this.isDone = ko.observable(data.completed);
 }
 
 function TaskListViewModel() {
@@ -20,6 +20,16 @@ function TaskListViewModel() {
   };
 
   self.removeTask = function(task) { self.tasks.remove(task) };
+
+  // Load initial state from server, convert it to Task instances, then populate self.tasks
+  fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let mappedTasks = data.slice(0, 10).map(function(item) { return new Task(item) });
+      self.tasks(mappedTasks);
+    });
 }
 
 ko.applyBindings(new TaskListViewModel());
